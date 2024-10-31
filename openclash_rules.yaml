@@ -1,0 +1,33 @@
+
+rules:
+  # Speedtest 相关规则，确保测速走代理
+  - DOMAIN-SUFFIX, speedtest.net, Proxy
+  - DOMAIN-SUFFIX, fast.com, Proxy
+  - DOMAIN-SUFFIX, ooklaserver.net, Proxy  # Speedtest 测速服务器域名
+  - DOMAIN-SUFFIX, api.fast.com, Proxy
+  - DOMAIN-KEYWORD, speedtest, Proxy
+  
+  # 确保 fast.com 的测速能够正常连接
+  - DOMAIN-SUFFIX, fastly.net, Proxy  # 可能用于 fast.com 的 CDN
+  
+  # 国内流量直连，避免影响测速
+  - DOMAIN-SUFFIX, bilibili.com, DIRECT  # Bilibili 直连
+  - DOMAIN-SUFFIX, biliapi.com, DIRECT   # Bilibili API 直连
+  - DOMAIN-SUFFIX, speedtest.cn, DIRECT  # 中国的测速服务
+  - DOMAIN-SUFFIX, chinaz.com, DIRECT    # 其他可能的国内测速
+  - DOMAIN-SUFFIX, 17ce.com, DIRECT       # 另一个国内测速服务
+  
+  # 兜底规则，其他流量走代理
+  - MATCH, Proxy
+  
+  # Google 相关规则
+  - DOMAIN-SUFFIX, google.com, Proxy
+  - DOMAIN-SUFFIX, youtube.com, Proxy
+  - DOMAIN-SUFFIX, facebook.com, Proxy
+  - DOMAIN-KEYWORD, google, Proxy
+  
+  # Google 服务相关规则
+  - DOMAIN-SUFFIX, services.googleapis.cn, Proxy
+  - DOMAIN-SUFFIX, gstatic.com, Proxy
+  - DOMAIN-SUFFIX, googleusercontent.com, Proxy
+  - DOMAIN-SUFFIX, ggpht.com, Proxy

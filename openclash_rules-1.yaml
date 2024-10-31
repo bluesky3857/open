@@ -1,0 +1,27 @@
+# OpenClash 规则集配置
+
+rules:
+  # 测速服务通过代理
+  - DOMAIN-SUFFIX,speedtest.net,Proxy
+  - DOMAIN-SUFFIX,fast.com,Proxy
+  - DOMAIN-SUFFIX,ooklaserver.net,Proxy
+  - DOMAIN-SUFFIX,api.fast.com,Proxy
+  - DOMAIN-KEYWORD,speedtest,Proxy
+
+  # Google相关服务通过代理
+  - DOMAIN-SUFFIX,google.com,Proxy
+  - DOMAIN-SUFFIX,googleusercontent.com,Proxy
+  - DOMAIN-SUFFIX,gstatic.com,Proxy
+  - DOMAIN-SUFFIX,ggpht.com,Proxy
+  - DOMAIN-SUFFIX,services.googleapis.cn,Proxy
+  - DOMAIN-SUFFIX,youtube.com,Proxy
+
+  # B站相关网站直连
+  - DOMAIN-SUFFIX,bilibili.com,DIRECT
+  - DOMAIN-SUFFIX,biliapi.com,DIRECT
+
+  # 保证中国大陆IP直连
+  - GEOIP,CN,DIRECT
+
+  # 默认走代理
+  - MATCH,Proxy

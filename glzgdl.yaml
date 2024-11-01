@@ -1,0 +1,30 @@
+rules:
+  # 国内测速网站直连
+  - DOMAIN-SUFFIX,speedtest.cn,DIRECT
+  - DOMAIN-SUFFIX,chinaz.com,DIRECT
+  - DOMAIN-SUFFIX,17ce.com,DIRECT
+
+  # Speedtest和Fast.com走代理
+  - DOMAIN-SUFFIX,speedtest.net,DIRECT
+  - DOMAIN-SUFFIX,fast.com,DIRECT
+  - DOMAIN-SUFFIX,ooklaserver.net,DIRECT
+  - DOMAIN-SUFFIX,api.fast.com,DIRECT
+  - DOMAIN-KEYWORD,speedtest,DIRECT
+
+  # Google相关服务代理
+  - DOMAIN-SUFFIX,google.com,Proxy
+  - DOMAIN-SUFFIX,googleusercontent.com,Proxy
+  - DOMAIN-SUFFIX,gstatic.com,Proxy
+  - DOMAIN-SUFFIX,ggpht.com,Proxy
+  - DOMAIN-SUFFIX,services.googleapis.cn,Proxy
+  - DOMAIN-SUFFIX,youtube.com,Proxy
+
+  # 哔哩哔哩直连
+  - DOMAIN-SUFFIX,bilibili.com,DIRECT
+  - DOMAIN-SUFFIX,biliapi.com,DIRECT
+
+  # 保证中国大陆IP直连
+  - GEOIP,CN,DIRECT
+
+  # 其他流量走代理
+  - MATCH,Proxy
